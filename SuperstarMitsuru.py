@@ -581,7 +581,7 @@ async def play_song(voice, url, chan):
 async def playlist_control(message, voice, verified):
 	#discord.opus.load_opus('/usr/local/lib/python3.5/dist-packages/opuslib')
 	split = message.content.split()
-	conn_string = "host='localhost' dbname='Mitsuru' user='postgres' password='postgrespassword'"
+	conn_string = "host='localhost' dbname='Mitsuru' user='"+setting.postgresuser+"' password='"+setting.postgrespassword+"'"
 	conn = psycopg2.connect(conn_string)
 	cursor = conn.cursor()
 
